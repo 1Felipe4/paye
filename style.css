@@ -1,0 +1,11 @@
+#output{
+  text-align: left;
+}
+#output  *{
+  width: 20%;
+  margin: 2%;
+}
+
+label{
+  width:20%;
+}

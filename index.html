@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PAYE</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <fieldset id="input">
+      <legend>Amount Earned</legend>
+      <table>
+        <tr>
+          <td><label for="amount">Amount</label></td>
+          <td><input type="number" name="amount" value="" id="amount"></td>
+        </tr>
+        <tr>
+          <td><label for="weekly">Weekly</label></td>
+          <td><input type="radio" name="payment" value="weekly" id="weekly"></td>
+        </tr>
+        <tr>
+          <td><label for="monthly">Monthly</label></td>
+          <td><input type="radio" name="payment" value="monthly" id="monthly"></td>
+        </tr>
+        <tr>
+          <td><label for="annually">Annually</label></td>
+          <td><input type="radio" name="payment" value="annually" id="annually"></td>
+        </tr>
+    </table>
+      <button type="button" name="button" onclick="verify()">Calculate</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Estimate</legend>
+
+      <table id="output">
+        <tr>
+          <th></th>
+          <th>Weekly</th>
+          <th>Monthly</th>
+          <th>Annual</th>
+        </tr>
+        <tr>
+          <th class="gross">Gross</th>
+          <td class="gross"> </td>
+          <td class="gross"> </td>
+          <td class="gross"> </td>
+        </tr>
+        <tr>
+          <th class="paye">P.A.Y.E</th>
+          <td class="paye"> </td>
+          <td class="paye"> </td>
+          <td class="paye"> </td>
+        </tr>
+        <tr>
+          <th class="nis">N.I.S</th>
+          <td class="nis"> </td>
+          <td class="nis"> </td>
+          <td class="nis"> </td>
+        </tr>
+        <tr>
+          <th class="health">Health Surcharge</th>
+          <td class="health"> </td>
+          <td class="health"> </td>
+          <td class="health"> </td>
+        </tr>
+        <tr>
+          <th class="net">Net</th>
+          <td class="net"> </td>
+          <td class="net"> </td>
+          <td class="net"> </td>
+        </tr>
+      </table>
+    </fieldset>
+<script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
