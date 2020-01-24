@@ -120,7 +120,7 @@ function net(mPaye, mHealth, mNis, amount){
 
 mNet = amount - (mPaye, mHealth, mNis);
 wNet = mNet/4;
-aNet= mNet*4;
+aNet= mNet*12;
 var net = document.getElementsByClassName("net");
 net[1].innerHTML = "$" + (wNet).toFixed(2);
 net[2].innerHTML = "$" + (mNet).toFixed(2);
