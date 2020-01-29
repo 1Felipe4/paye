@@ -16,6 +16,53 @@ table, tr, td, th{
 
 }
 
+body{
+  text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+  border-style: solid;
+  border-color: black;
+  padding: 1%;
+  width:80%;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 5%;
+
+}
+
+
+tr, td{
+  border-style: groove;
+  border-color: gray;
+  border-width: 1px;
+}
+
+td:first-child{
+  width: 5%;
+}
+.table-form td:last-child{
+width: 15%;
+}
+
+input{
+  border: none;
+}
+
+.health-table{
+  width:80%;
+  border: solid;
+  margin: auto;
+  display: none;
+}
+
+.health-table table{
+  margin-left: 0px;
+  border:none;
+
+}
+
 #link{
   text-align: right;
   padding: 5%;

@@ -8,12 +8,14 @@
   <body>
     <h1> Calculate Your Tax </h1>
 
-    <fieldset id="input">
-      <legend>Amount Earned</legend>
-      <table>
+
+    <table>
+      <thead>
+        Enter Amount Earned
+      </thead>
         <tr>
           <td><label for="amount">Amount</label></td>
-          <td><input type="number" name="amount" value="" id="amount"></td>
+          <td><input type="number" name="amount" value="0" id="amount"></td>
         </tr>
         <tr>
           <td><label for="weekly">Weekly</label></td>
@@ -27,14 +29,19 @@
           <td><label for="annually">Annually</label></td>
           <td><input type="radio" name="payment" value="annually" id="annually"></td>
         </tr>
-    </table>
-      <button type="button" name="button" onclick="verify()">Calculate</button>
-    </fieldset>
+        <tr>
+        <td colspan="2"><button type="button" name="button" onclick="verify()">Calculate</button></td>
+        </tr>
 
-    <fieldset>
-      <legend>Estimate</legend>
+    </table>
+
+
+
 
       <table id="output">
+        <thead>
+          Estimate
+        </thead>
         <tr>
           <th></th>
           <th>Weekly</th>
@@ -73,7 +80,6 @@
         </tr>
       </table>
 
-    </fieldset>
     <p id="link"> <a href="tax_returns_emo.html">Calculate Tax Returns</a> </p>
 <script src="script.js" charset="utf-8"></script>
   </body>
