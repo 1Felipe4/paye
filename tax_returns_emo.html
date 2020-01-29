@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tax Returns Form (Emolument Income)</title>
+    <link rel="stylesheet" href="tax_return.css">
+  </head>
+  <body>
+
+    <main>
+      <h2>Tax Computation</h2>
+
+
+        <table  class="table-form" onchange="updateTable()">
+          <tbody>
+            <thead>
+              Income
+            </thead>
+
+          <tr>
+            <td>1</td>
+            <td>Income from Employment (government and Non-government) as per TD4 enclosed</td>
+            <td><input type="number" name="" value="0" id="income"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Retirement Severance benefit</td>
+            <td><input type="number" name="" value="0" id="severance"></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Pensions from sources within/outside T&T</td>
+            <td><input type="number" name="" value="0" id="pension"></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>TOTAL EMOLUMENT INCOME</strong> (SUM OF LINES 1 TO 3)</td>
+            <td id="total_emo_income"></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>Less Travelling Expenses</strong> </td>
+            <td><input type="number" name="" value="0" id="travel_expenses"></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>Net Employment Income</strong> (LINE 4 MINUS LINE 5)</td>
+            <td id="net_employment_income"></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Gross Amount Received on Cancellation of Approved Deferred Annuity/Pension Plan</td>
+            <td><input type="number" name="" value="0" id="cancelled_pension"></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Employer’s contribution to Approved Deferred Annuity/Pension Plan (Taxable benefit)</td>
+            <td><input type="number" name="" value="0" id="employers_approved_pension"></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><strong>Total Income</strong> (SUM of LINES 6 to 8)</td>
+            <td id="total_income"></td>
+          </tr>
+        </tbody></table>
+
+        <table  class="table-form" onchange="updateTable()">
+          <tbody>
+            <thead>
+              Deductions
+            </thead>
+            <tr>
+              <td>10</td>
+              <td>Tertiary Education Expenses (Limited to $60,000 per household)</td>
+              <td><input type="number" id="tertiary_expenses" name="" value="0" max="60000"></td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>First-Time Acquisition of House in respect of Owner Occupied Property (Limited to $25,000)</td>
+              <td><input type="number" id="first-time_house" name="" value="0" max="25000"></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>Covenanted Donations (Limited to 15% of Line 9)</td>
+              <td><input type="number" id="covenanted_donations" name="" value="0"></td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td><strong>TOTAL NET INCOME (Line 9 minus sum of Lines 10 - 12)</strong></td>
+              <td id="total_net_income"></td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>Deduct Personal Allowance</td>
+              <td>$72,000</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td><strong>ASSESSABLE INCOME (LINE 13 MINUS LINE 14)</strong></td>
+              <td id="assessable_income"></td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>Approved Pension Plan/Scheme/Deferred Annuity Plan</td>
+              <td><input type="number" id="approved_pension" name="" value="0"></td>
+            </tr>
+            <tr>
+              <td>17</td>
+              <td>Contributions to Widows’ and Orphans’ Fund</td>
+              <td><input type="number" id= "contribution_widows" name="" value="0"></td>
+            </tr>
+            <tr>
+              <td>18</td>
+              <td>National Insurance Payments - 70% Allowable</td>
+              <td><input type="number" id="national_insurance_payments" name="" value="0"></td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td><strong> SUM OF LINES 16 TO 18</strong> </td>
+              <td id="19"></td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>Employer’s NIS Contributions paid for domestic workers</td>
+              <td><input type="number" id="employers_contribution_nis" name="" value="0"> </td>
+            </tr>
+            <tr>
+              <td>21</td>
+              <td>Alimony/Maintenance Payment</td>
+              <td> <input type="number" id="maintenance_payment" name="" value="0"> </td>
+            </tr>
+            <tr>
+              <td>22</td>
+              <td> <strong>TOTAL DEDUCTIONS (Add Lines 19 to 21</strong> </td>
+              <td id="total_deductions"></td>
+            </tr>
+            <tr>
+              <td>23</td>
+              <td> <strong> CHARGEABLE INCOME (Line 15 minus Line 22)</strong> </td>
+              <td id="chargable_income"></td>
+            </tr>
+            <tr>
+              <td>24</td>
+              <td>TAX ON CHARGEABLE INCOME (25% oF Line 23)</td>
+              <td id="tax_chargable_income"></td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td><strong>Total Tax Credits and Double Taxation Relief <br> (TOTAL TAX CREDIT AMOUNT LIMITED to Line 24)</strong> </td>
+              <td> <input type="number" id="taxation_relief" name="" value="0"> </td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td><strong>Income Tax Liability</strong> (Line 24 minus Line 25) </td>
+              <td id="income_tax_liability"> </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <table class="table-form"  onchange="updateTable()">
+          <thead>
+            Prepayments
+          </thead>
+          <tbody>
+            <tr>
+              <td>27</td>
+              <td>Tax Deducted Re: Cancellation of Approved Deferred Annuity/Pension Plan</td>
+              <td> <input type="number" id="27" name="" value="0"> </td>
+            </tr>
+            <tr>
+              <td>28</td>
+              <td> <strong>INCOME TAX DEDUCTED (PAYE) Per TD4 certificate/s enclosed</strong> </td>
+              <td > <input type="number" id="income_tax_deducted" name="" value="0"> </td>
+            </tr>
+            <tr>
+              <td>29</td>
+              <td> <strong>TOTAL PREPAYMENTS</strong>(LINES 27 to 28) </td>
+              <td id="total_prepayments"></td>
+            </tr>
+            <tr>
+              <td>30</td>
+              <td>If Line 26 is greater than Line 29 <strong>Enter Difference - Balance Payable</strong> </td>
+              <td id="30"></td>
+            </tr>
+            <tr>
+              <td>31</td>
+              <td>If Line 26 is less than Line 29 <strong> Enter Difference - Refund</strong></td>
+              <td id="31"></td>
+            </tr>
+          </tbody>
+        </table>
+        
+<section class="health-table">
+        <table >
+          <tbody>
+            <thead>
+              <strong>Health Surcharge</strong>
+            </thead>
+            <tr>
+              <td>32</td>
+              <td>
+                <table class="health-table">
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Rate per Week(1)</td>
+                    <td><label for="health_num_weeks">No. Of Weeks(2)</label></td>
+                    <td><label for="liability">Liability (3)</label></td>
+                  </tr>
+                  <tr>
+                    <td>(a)</td>
+                    <td> Income more than $469.99 per month or $109.00 per week</td>
+                    <td><label for="8_per_week">$8.25</label> <input type="radio" id="8_per_week" name="rate_per_week" value=""> </td>
+                    <td> <input type="number" class="health_num_weeks" name="" value="0"></td>
+                    <td> <input type="number" class="liability"name="" value="0"> </td>
+                  </tr>
+                  <tr>
+                    <td>(b)</td>
+                    <td>Income equal to or less than $469.99 per month or $109.00 per week</td>
+                    <td><label for="4_per_week">$4.80</label> <input type="radio" id="4_per_week" name="rate_per_week" value=""> </td>
+                    <td> <input type="number" class="health_num_weeks" name="" value="0"></td>
+                    <td> <input type="number" class="liability"name="" value="0"> </td>
+                  </tr>
+                  <tr>
+                    <td>(c)</td>
+                    <td colspan="3"> Total Liability [Col. 3(a) + 3(b)]</td>
+                    <td id="total_liability"></td>
+                  </tr>
+                  <tr>
+                    <td>(d)</td>
+                    <td colspan="3"> Health Surcharge Deducted per TD4 Certificate/s attached</td>
+                    <td> <input type="number" id="surcharge_deducted" name="" value="0"> </td>
+                  </tr>
+                  <tr>
+                    <td>(e)</td>
+                    <td colspan="3"> If Line (c) is greater than Line (d) - balance of Health Surcharge payable</td>
+
+                    <td id="payable_surcharge"></td>
+                  </tr>
+                  <tr>
+                    <td>(f)</td>
+                    <td colspan="3"> If Line (c) is less than (d)-Overpayment</td>
+                    <td id="Overpayment"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+<script src="script.js" charset="utf-8"></script>
+  </body>
+</html>

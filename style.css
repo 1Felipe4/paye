@@ -9,3 +9,9 @@
 label{
   width:20%;
 }
+
+table, tr, td, th{
+  border-collapse: collapse;
+  border: solid;
+
+}
