@@ -44,3 +44,8 @@ input{
   border:none;
 
 }
+
+#link{
+text-align: right;
+padding: 5%;
+}

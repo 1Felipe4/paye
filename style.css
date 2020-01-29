@@ -15,3 +15,8 @@ table, tr, td, th{
   border: solid;
 
 }
+
+#link{
+  text-align: right;
+  padding: 5%;
+}
